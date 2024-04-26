@@ -1,0 +1,15 @@
+spring:
+  application:
+  name: bookshop
+
+server:
+  port: 8085
+
+app:
+  api:
+    path:
+      version:
+        v1: "api/v1"
+      book:
+        createBook: "/book"
+        getBook: "/book/{title}"
