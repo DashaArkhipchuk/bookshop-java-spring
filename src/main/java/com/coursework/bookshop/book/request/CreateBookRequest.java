@@ -1,5 +1,6 @@
 package com.coursework.bookshop.book.request;
 
+import com.coursework.bookshop.author.request.CreateAuthorRequest;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,9 +8,10 @@ import lombok.Data;
 @Builder
 public class CreateBookRequest {
     private String title;
-    private String author;
     private int publishYear;
     private String genre;
     private Double price;
+
+    private CreateAuthorRequest author;
 
 }

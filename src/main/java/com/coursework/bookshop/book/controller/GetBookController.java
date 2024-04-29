@@ -16,14 +16,10 @@ public class GetBookController {
     private final BookService bookService;
     @GetMapping("${app.api.path.book.getBook}")
     public ResponseEntity<Book> getBuilding(
-            @PathVariable String title,
-//            String author,
-//            String publishyear,
-//            String genre,
-            @RequestParam Double price
+            @RequestParam Integer id
     ){
-        Book book = bookService.getBook(title, price);
-        log.info("Builder: "+book);
+        Book book = bookService.getBook(id);
+//        log.info("Builder: "+book);
         return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
