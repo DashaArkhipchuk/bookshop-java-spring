@@ -7,6 +7,7 @@ import com.coursework.bookshop.author.request.CreateAuthorRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,4 +28,8 @@ public class AuthorService {
     }
 
 
+    public Author findExisting(Author build) {
+        List<Author> byFirstNameAndLastName = authorRepository.findByFirstNameAndLastName(build.getFirstName(), build.getLastName());
+        return byFirstNameAndLastName.stream().findFirst().orElse(build);
+    }
 }

@@ -9,9 +9,28 @@ spring:
     password: admin
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 
+#logging:
+#  level:
+#    com.coursework.bookshop: debug
+#    org.springframework.web: error
+#  pattern:
+#    console: "%d{MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#    file: "%d{YYYY-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#  file:
+#    name: genericshop.log
+#    append: false
+#    max-size: 1MB
+#    max-history: 5
+
+
 
 server:
   port: 8085
+
+
+eureka:
+  client:
+    enabled: true
 
 app:
   api:
@@ -19,10 +38,14 @@ app:
       version:
         v1: "api/v1"
       book:
-        createBook: "/book"
+        createBook: "/book/create"
         deleteBook: "/book/delete"
+        updateBook: "/book/update"
+        getBooks: "/books"
         getBook: "/book"
       author:
         createAuthor: "/author/create"
+      user:
+        getUser: "/user"
 
 

@@ -1,13 +1,11 @@
 package com.coursework.bookshop.book.mapper;
 
-import com.coursework.bookshop.author.entity.Author;
 import com.coursework.bookshop.author.mapper.AuthorRequestMapper;
-import com.coursework.bookshop.author.request.CreateAuthorRequest;
 import com.coursework.bookshop.book.entity.Book;
 import com.coursework.bookshop.book.request.CreateBookRequest;
 
 public class BookRequestMapper {
-    public static Book mapBookRequestToBook(CreateBookRequest createAuthorRequest){
+    public static Book mapCreateBookRequestToBook(CreateBookRequest createAuthorRequest){
         Book book = Book.builder()
                 .title(createAuthorRequest.getTitle())
                 .author(AuthorRequestMapper.mapAuthorRequestToAuthor(createAuthorRequest.getAuthor()))
@@ -19,7 +17,7 @@ public class BookRequestMapper {
         return book;
     }
 
-    public static CreateBookRequest mapAuthorToAuthorRequest(Book book){
+    public static CreateBookRequest mapBookToCreateBookRequest(Book book){
         CreateBookRequest request = CreateBookRequest.builder()
                 .author(AuthorRequestMapper.mapAuthorToAuthorRequest(book.getAuthor()))
                 .title(book.getTitle())

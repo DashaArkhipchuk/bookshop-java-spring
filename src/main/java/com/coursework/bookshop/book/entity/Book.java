@@ -13,6 +13,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+//@NamedQuery(
+//        name="Book.findCheapBooks",
+//        query = "select from Book where price< :price"
+//)
 public class Book {
 
     @Id
@@ -28,7 +32,7 @@ public class Book {
     @Column(name="price")
     private Double price;
 
-    @ManyToOne(targetEntity = Author.class, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Author.class, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "authors_id")
     private Author author;
 }
