@@ -1,5 +1,6 @@
 package com.coursework.bookshop.book.controller;
 
+import com.coursework.bookshop.book.dto.BookDto;
 import com.coursework.bookshop.book.entity.Book;
 import com.coursework.bookshop.book.service.BookService;
 import lombok.RequiredArgsConstructor;
@@ -15,10 +16,10 @@ import org.springframework.web.bind.annotation.*;
 public class GetBookController {
     private final BookService bookService;
     @GetMapping("${app.api.path.book.getBook}")
-    public ResponseEntity<Book> getBuilding(
+    public ResponseEntity<BookDto> getBook(
             @RequestParam Integer id
     ){
-        Book book = bookService.getBook(id);
+        BookDto book = bookService.getBook(id);
 //        log.info("Builder: "+book);
         return new ResponseEntity<>(book, HttpStatus.OK);
     }

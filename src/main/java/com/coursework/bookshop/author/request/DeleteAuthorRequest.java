@@ -1,4 +1,4 @@
-package com.coursework.bookshop.book.request;
+package com.coursework.bookshop.author.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeleteBookRequest {
-
+public class DeleteAuthorRequest {
     private Integer id;
-
 }

@@ -1,7 +1,7 @@
 package com.coursework.bookshop.author.controller;
 
 import com.coursework.bookshop.author.dto.AuthorDto;
-import com.coursework.bookshop.author.request.CreateAuthorRequest;
+import com.coursework.bookshop.author.request.UpdateAuthorRequest;
 import com.coursework.bookshop.author.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -16,14 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("${app.api.path.version.v1}")
 @RequiredArgsConstructor
-public class CreateAuthorController {
+public class UpdateAuthorController {
     private final AuthorService authorService;
-    @PostMapping("${app.api.path.author.createAuthor}")
-    public ResponseEntity<AuthorDto> createAuthor(
-            @RequestBody CreateAuthorRequest createAuthorRequest
+    @PostMapping("${app.api.path.author.updateAuthor}")
+    public ResponseEntity<AuthorDto> updateAuthor(
+            @RequestBody UpdateAuthorRequest updateAuthorRequest
     ){
-        log.info(createAuthorRequest);
-        AuthorDto book = authorService.createAuthor(createAuthorRequest);
-        return new ResponseEntity<>(book, HttpStatus.OK);
+        AuthorDto book = authorService.updateAuthor(updateAuthorRequest);
+        return new ResponseEntity<>(book,HttpStatus.OK);
     }
 }

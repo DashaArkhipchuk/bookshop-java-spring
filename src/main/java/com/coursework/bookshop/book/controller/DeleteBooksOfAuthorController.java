@@ -1,7 +1,7 @@
 package com.coursework.bookshop.book.controller;
 
+import com.coursework.bookshop.author.request.DeleteAuthorRequest;
 import com.coursework.bookshop.book.entity.Book;
-import com.coursework.bookshop.book.request.CreateBookRequest;
 import com.coursework.bookshop.book.request.DeleteBookRequest;
 import com.coursework.bookshop.book.service.BookService;
 import lombok.RequiredArgsConstructor;
@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("${app.api.path.version.v1}")
 @RequiredArgsConstructor
-public class DeleteBookController {
+public class DeleteBooksOfAuthorController {
     private final BookService bookService;
-    @DeleteMapping("${app.api.path.book.deleteBook}")
-    public ResponseEntity<Book> deleteBook(
-            @RequestBody DeleteBookRequest deleteBookRequest
+    @DeleteMapping("${app.api.path.book.deleteBooks}")
+    public ResponseEntity<Book> deleteBooks(
+            @RequestBody DeleteAuthorRequest deleteAuthorRequest
     ){
 
-        bookService.deleteBookByRequest(deleteBookRequest);
+        bookService.deleteBooksByAuthorsId(deleteAuthorRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

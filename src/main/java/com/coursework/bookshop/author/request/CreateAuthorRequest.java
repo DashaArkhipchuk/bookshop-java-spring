@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 @Builder
 public class CreateAuthorRequest {
-    @NotBlank
-    @Pattern(regexp = "", message = "Field firstName should be ... ")
+//    @NotBlank
+//    @Pattern(regexp = "", message = "Field firstName should be ... ")
     private String firstName;
-    @NotBlank
+//    @NotBlank
     private String lastName;
 
     private String biography;

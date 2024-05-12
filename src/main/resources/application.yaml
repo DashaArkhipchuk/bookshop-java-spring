@@ -40,12 +40,17 @@ app:
       book:
         createBook: "/book/create"
         deleteBook: "/book/delete"
+        deleteBooks: "/book/deleteByAuthor"
         updateBook: "/book/update"
         getBooks: "/books"
         getBook: "/book"
       author:
         createAuthor: "/author/create"
+        getAuthors: "/authors"
+        getAuthorNames: "/author/names"
+        getAuthor: "/author"
+        updateAuthor: "/author/update"
+        deleteAuthor: "/author/delete"
       user:
         getUser: "/user"
-
 

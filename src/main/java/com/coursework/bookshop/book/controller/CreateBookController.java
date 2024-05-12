@@ -1,5 +1,6 @@
 package com.coursework.bookshop.book.controller;
 
+import com.coursework.bookshop.book.dto.BookDto;
 import com.coursework.bookshop.book.entity.Book;
 import com.coursework.bookshop.book.request.CreateBookRequest;
 import com.coursework.bookshop.book.service.BookService;
@@ -19,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class CreateBookController {
     private final BookService bookService;
     @PostMapping("${app.api.path.book.createBook}")
-    public ResponseEntity<Book> createBook(
+    public ResponseEntity<BookDto> createBook(
             @RequestBody CreateBookRequest createBookRequest
     ){
         log.info(createBookRequest);
-        Book book = bookService.createBook(createBookRequest);
+        BookDto book = bookService.createBook(createBookRequest);
         return new ResponseEntity<>(book,HttpStatus.OK);
     }
 }

@@ -8,6 +8,8 @@ import lombok.Data;
 public class UpdateBookRequest {
     private Integer id;
     private String title;
+
+    private Integer authorId;
     private int publishYear;
     private String genre;
     private Double price;

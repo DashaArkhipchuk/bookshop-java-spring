@@ -17,6 +17,7 @@ public class BookDtoMapper {
         BookDto dto=BookDto.builder()
                 .id(b.getId())
                 .author(authorDtoMapper.mapAuthorToAuthorDto(b.getAuthor()))
+                .publishYear(b.getPublishYear())
                 .genre(b.getGenre())
                 .title(b.getTitle())
                 .price(b.getPrice())

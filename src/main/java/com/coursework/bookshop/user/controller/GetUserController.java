@@ -1,5 +1,6 @@
 package com.coursework.bookshop.user.controller;
 
+
 import com.coursework.bookshop.user.entity.User;
 import com.coursework.bookshop.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,6 @@ public class GetUserController {
     private final UserService userService;
 
     @GetMapping("${app.api.path.user.getUser}")
-    @SuppressWarnings("unused")
     public ResponseEntity<User> getUserByEmail(
             @RequestParam String email
     ) {
