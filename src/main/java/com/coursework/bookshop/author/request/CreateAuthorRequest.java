@@ -9,12 +9,15 @@ import lombok.Data;
 @Data
 @Builder
 public class CreateAuthorRequest {
-//    @NotBlank
-//    @Pattern(regexp = "", message = "Field firstName should be ... ")
+
+    @NotBlank(message = "First name cannot be blank")
     private String firstName;
-//    @NotBlank
+
+    @NotBlank(message = "Last name cannot be blank")
     private String lastName;
 
     private String biography;
+
+    @Pattern(regexp = "^\\d{4}\\s*-\\s*\\d{4}$", message = "Activity years must be in the format YYYY-YYYY")
     private String activityYears;
 }

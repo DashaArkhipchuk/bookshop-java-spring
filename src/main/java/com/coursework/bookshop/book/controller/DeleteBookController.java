@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @Log4j2
@@ -18,7 +19,7 @@ public class DeleteBookController {
     private final BookService bookService;
     @DeleteMapping("${app.api.path.book.deleteBook}")
     public ResponseEntity<Book> deleteBook(
-            @RequestBody DeleteBookRequest deleteBookRequest
+            @RequestBody @Validated DeleteBookRequest deleteBookRequest
     ){
 
         bookService.deleteBookByRequest(deleteBookRequest);

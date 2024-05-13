@@ -53,4 +53,5 @@ app:
         deleteAuthor: "/author/delete"
       user:
         getUser: "/user"
+        createUser: "/user/create"
 

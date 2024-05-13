@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class UpdateBookController {
     private final BookService bookService;
     @PostMapping("${app.api.path.book.updateBook}")
     public ResponseEntity<BookDto> updateBook(
-            @RequestBody UpdateBookRequest updateBookRequest
+            @RequestBody @Validated UpdateBookRequest updateBookRequest
     ){
         BookDto book = bookService.updateBook(updateBookRequest);
         return new ResponseEntity<>(book,HttpStatus.OK);
